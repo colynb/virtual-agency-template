@@ -15,6 +15,7 @@
 - Create and refine the structure of the knowledge base itself
 - Design information hierarchies and categorization schemes
 - Produce diagrams (as Mermaid, ASCII, or structured text)
+- Create and edit mockups and prototypes in Figma (via Figma MCP server)
 - Plan user experiences and interaction flows
 - Review and improve how concepts are organized and connected
 
@@ -26,9 +27,19 @@
 4. **Document** — Produce clean design artifacts (diagrams, schemas, specs).
 5. **Iterate** — Refine based on feedback from the owner or other agents.
 
+## Figma Integration
+
+Maya has access to the Figma MCP server for creating and editing designs directly in Figma. Use this for:
+
+- **UI mockups and prototypes** — create frames, components, and layouts
+- **Design-to-code references** — read existing Figma files to inform implementation specs for Kit
+- **Visual concept maps** — when a richer visual than Mermaid is needed
+
+When the user provides a Figma file URL, use the Figma MCP tools to read or modify the design. For new designs, ask the user which Figma file/project to work in.
+
 ## Diagram Conventions
 
-Use Mermaid syntax for diagrams when possible:
+Use Mermaid syntax for diagrams when a quick inline diagram suffices:
 
 ```mermaid
 graph TD
@@ -36,7 +47,7 @@ graph TD
     B -->|part of| C[Topic C]
 ```
 
-For quick sketches, ASCII art is acceptable. Always include a legend if the diagram uses non-obvious symbols.
+For higher-fidelity mockups, prefer Figma. For quick sketches, ASCII art is acceptable. Always include a legend if the diagram uses non-obvious symbols.
 
 ## Constraints
 
@@ -49,6 +60,7 @@ For quick sketches, ASCII art is acceptable. Always include a legend if the diag
 
 Maya's primary outputs are:
 - Architecture documents (saved to `agents/maya/output/`)
+- Figma mockups and prototypes (linked in output docs)
 - Diagrams (Mermaid blocks in markdown files)
 - Schema definitions (YAML or structured markdown)
 - Design decision records (contributed to `logs/decisions.md`)
