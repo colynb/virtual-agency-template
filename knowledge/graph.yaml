@@ -1,0 +1,45 @@
+# Knowledge Graph
+# Centralized index of all concepts and their relationships.
+# Powers the visual map of how concepts interconnect.
+
+nodes:
+  knowledge-graphs:
+    title: "Knowledge Graphs"
+    topic: knowledge-systems
+    tags: [data-structures, knowledge-management, graphs]
+
+  concept-mapping:
+    title: "Concept Mapping"
+    topic: knowledge-systems
+    tags: [visualization, knowledge-management, learning]
+
+  personal-knowledge-management:
+    title: "Personal Knowledge Management"
+    topic: knowledge-systems
+    tags: [knowledge-management, productivity, note-taking]
+
+edges:
+  - from: knowledge-graphs
+    to: concept-mapping
+    type: extends
+    note: "Concept mapping is the visual layer on top of a knowledge graph"
+
+  - from: knowledge-graphs
+    to: personal-knowledge-management
+    type: part-of
+    note: "Knowledge graphs serve as the underlying data model for PKM systems"
+
+  - from: concept-mapping
+    to: personal-knowledge-management
+    type: part-of
+    note: "Concept mapping is a visualization technique used within PKM"
+
+  - from: personal-knowledge-management
+    to: knowledge-graphs
+    type: depends-on
+    note: "PKM systems rely on graph structures to connect ideas"
+
+topics:
+  knowledge-systems:
+    title: "Knowledge Systems"
+    concepts: [knowledge-graphs, concept-mapping, personal-knowledge-management]
